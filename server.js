@@ -7,6 +7,7 @@ const mongoose = require('mongoose');
 const getBooks = require('./lib/getBooks');
 const deleteBook = require('./lib/deleteBook');
 const createBook = require('./lib/createBook');
+const updateBook = require('./lib/updateBook');
 
 const app = express();
 app.use(cors());
@@ -29,6 +30,7 @@ app.get('/test', (request, response) => {
 
 app.get('/books', getBooks);
 app.post('/books', createBook);
+app.put('/books/:id', updateBook);
 app.delete('/books/:id', deleteBook);
 
 // Not Found
