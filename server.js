@@ -23,9 +23,7 @@ db.once('open', _ => {
 });
 
 app.get('/test', (request, response) => {
-
-  response.send('test request received')
-
+  response.send('test request received');
 });
 
 app.get('/books', getBooks);
