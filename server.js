@@ -8,10 +8,12 @@ const getBooks = require('./lib/getBooks');
 const deleteBook = require('./lib/deleteBook');
 const createBook = require('./lib/createBook');
 const updateBook = require('./lib/updateBook');
+const authorize = require('./lib/auth/authorize');
 
 const app = express();
 app.use(cors());
 app.use(express.json());
+app.use(authorize); // use auth0 authorization middleware
 
 const PORT = process.env.PORT || 3001;
 
