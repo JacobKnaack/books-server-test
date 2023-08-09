@@ -10,7 +10,7 @@ const Book = require('./models/book.js');
 async function seedBooks() {
   console.log('seeding books...');
 
-  await Book.create({ title: 'The Silent Patient', description: 'a women may or may not have killed her husband and a theapist is determind to make her talk to discover her secrets.', status: 'LIFE-CHANGING' });
+  await Book.create({ title: 'The Silent Patient', description: 'a women may or may not have killed her husband and a therapist is determine to make her talk to discover her secrets.', status: 'LIFE-CHANGING' });
 
   await Book.create({ title: 'The Growth Mindset', description: 'Dweck coined the terms fixed mindset and growth mindset to describe the underlying beliefs people have about learning and intelligence. When students believe they can get smarter, they understand that effort makes them stronger. Therefore they put in extra time and effort, and that leads to higher achievement.', status: 'FAVORITE FIVE' });
 

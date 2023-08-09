@@ -17,6 +17,9 @@ app.use(authorize); // use auth0 authorization middleware
 
 const PORT = process.env.PORT || 3001;
 
+/**
+ * Mongoose DB Connection
+ */
 mongoose.connect(process.env.MONGODB_URL);
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
@@ -24,6 +27,9 @@ db.once('open', _ => {
   console.log('We\'re connected!');
 });
 
+/**
+ * Express routing to JS functions
+ */
 app.get('/test', (request, response) => {
   response.send('test request received');
 });
@@ -32,6 +38,10 @@ app.get('/books', getBooks);
 app.post('/books', createBook);
 app.put('/books/:id', updateBook);
 app.delete('/books/:id', deleteBook);
+
+/**
+ * Error Handling
+ */
 
 // Not Found
 app.get('*', (request, response) => {
